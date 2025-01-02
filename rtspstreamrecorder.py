@@ -4,8 +4,9 @@ from datetime import datetime
 import os
 
 # open video stream. Select your source like...
-cap = cv2.VideoCapture(0) # Do you want to test with the local camera?
-#cap = cv2.VideoCapture('rtsp://admintp:ABC@192.168.0.138/stream1')
+#cap = cv2.VideoCapture(0) # Do you want to test with the local camera?
+cap = cv2.VideoCapture('rtsp://admintp:abc@192.168.0.125/stream1')
+#cap = cv2.VideoCapture('rtsp://admintp:abc@192.168.0.138/stream1')
 #cap = cv2.VideoCapture('rtsp://62.109.19.230:554/iloveyou')
 
 w = cap.get(cv2.CAP_PROP_FRAME_WIDTH)
@@ -37,9 +38,10 @@ while True:
 
                 out.write(frame)
 
-                #cv2.imshow('frame',frame)
-                #if cv2.waitKey(1) & 0xFF == ord('q'):
-                #    break
+                # Display the resulting frame in a window
+                cv2.imshow('frame',frame)
+                if cv2.waitKey(1) & 0xFF == ord('q'):
+                  break
             else:
                 break
     except cv2.error as e:
