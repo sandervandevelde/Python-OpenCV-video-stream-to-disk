@@ -38,7 +38,7 @@ while True:
 
                 out.write(frame)
 
-                # Display the resulting frame in a window
+                # Display the resulting frame in a window. Enable/ Disable the next three lines to show/hide the window
                 cv2.imshow('frame',frame)
                 if cv2.waitKey(1) & 0xFF == ord('q'):
                   break
